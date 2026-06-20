@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html { scroll-behavior: smooth; }
+body { background: #0F0F0F; color: #F5F1EB; }
+::selection { background: #C6A16E; color: #0F0F0F; }
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0F0F0F; }
+::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #C6A16E; }
+
+.eyebrow { letter-spacing: .32em; }
+
+.ph {
+  position: relative;
+  border: 1.5px dashed rgba(198,161,110,.45);
+  background:
+    radial-gradient(120% 120% at 50% 0%, rgba(198,161,110,.07), transparent 60%),
+    linear-gradient(180deg, #171717, #111);
+  overflow: hidden;
+}
+.ph::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+.btn-gold { background:#C6A16E; color:#0F0F0F; transition:all .35s ease; }
+.btn-gold:hover { background:#d8b886; transform:translateY(-2px); box-shadow:0 18px 40px -18px rgba(198,161,110,.7); }
+.btn-ghost { border:1px solid rgba(198,161,110,.5); color:#F5F1EB; transition:all .35s ease; }
+.btn-ghost:hover { border-color:#C6A16E; background:rgba(198,161,110,.08); }
+
+.nav-link { position: relative; }
+.nav-link::after { content:''; position:absolute; left:0; bottom:-6px; height:1px; width:0; background:#C6A16E; transition:width .35s ease; }
+.nav-link:hover::after { width:100%; }
